@@ -10,12 +10,26 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Hello from Electron renderer!</title>
+    <title>OpenAI Study Notes Creator APP</title>
   </head>
+
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
+    <h1>Study Notes Creator</h1>
+
+    <div>
+      <form id="from_idea">
+        <label for="topic">Input topic</label><br />
+        <textarea name="topic" rows="4"></textarea><br />
+        <input type="submit" value="Submit" /><br />
+      </form>
+      <br />
+      <div>
+        <label for="generated_hints">Generated Topics</label><br />
+        <textarea id="genrated_hints" rows="4" readonly></textarea>
+      </div>
+    </div>
+
+    <!--<div id="app"></div>-->
   </body>
   <script src="./js/renderer.js"></script>
 </html>
