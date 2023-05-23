@@ -58,7 +58,7 @@ async function openAI(event,topic){
         model: "text-davinci-003",
         prompt: topic,
         temperature: 0.3,
-        max_tokens: 150,
+        max_tokens: 250, //original value 150
         top_p: 1.0,
         frequency_penalty: 0.0,
         presence_penalty: 0.0
