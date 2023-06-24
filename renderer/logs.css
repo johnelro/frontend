@@ -1,0 +1,521 @@
+.subBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0f0f0f;
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-container {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background-color: #1f1f1f;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    transition: 0.5s ease;
+}
+
+.input-check:checked~h2 {
+    color: #ffa31a;
+    text-shadow: 0 0 15px #ffa31a,
+        0 0 30px #ffa31a;
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    color: white;
+}
+
+.input-box .input-line {
+    position: absolute;
+    width: 100%;
+    bottom: -2px;
+    left: 0;
+    height: 2.5px;
+    background: white;
+    transition: 0.5s ease;
+}
+
+.input-check:checked~.input-box .input-line {
+    background: #ffa31a;
+    box-shadow: 0 0 10px #ffa31a;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: var(--small-font-size);
+    pointer-events: none;
+    color: var(--white-color);
+    transition: .5s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-check:checked~.input-box label {
+    color: #ffa31a;
+    text-shadow: 0 0 10px #ffa31a;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--small-font-size);
+    color: var(--white-color);
+    padding: 0 35px 0 5px;
+    transition: 0.5s ease;
+}
+
+.input-check:checked~.input-box input {
+    color: #ffa31a;
+    text-shadow: 0 0 5px #ffa31a;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: var(--white-color);
+    font-size: var(--medium-font-size);
+    line-height: 57px;
+    transition: 0.5s;
+}
+
+.input-check:checked~.input-box .icon {
+    color: #ffa31a;
+    filter: drop-shadow(0 0 5px --light-bacco);
+}
+
+.input-check:checked{
+    color: #ffa31a;
+    text-shadow: 0 0 10px #ffa31a;
+}
+
+label input {
+    accent-color: var(--white-color);
+    margin-right: 3px;
+    transition: 0.5s ease;
+}
+
+.input-check:checked~ label input {
+    accent-color: #ffa31a;
+}
+
+.input-check:checked{
+    color: #ffa31a;
+}
+
+button {
+    width: 100%;
+    height: 44px;
+    background: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: var(--small-font-size);
+    color: var(--body-color);
+    font-weight: 500;
+    transition: 0.5s ease;
+}
+
+.input-check:checked~button {
+    background: #ffa31a;
+    box-shadow: 0 0 15px #ffa31a;
+}
+
+.input-check:checked {
+    color:#ffa31a;
+    text-shadow: 0 0 10px #ffa31a;
+}
+
+.input-check:checked{
+    color: v#ffa31a;
+}
+
+.login-light {
+    position: absolute;
+    top: -123px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 10px;
+    /*background: var(--light-bacco);*/
+    border-radius: 20px;
+    background: #ffa31a;
+}
+
+.login-light::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 950px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .3)-50%,
+            rgba(255, 255, 255, 0)90%);
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.input-check:checked~.login-light::before {
+    opacity: 1;
+
+}
+
+.toggle {
+    position: absolute;
+    top: 20px;
+    width: 60px;
+    height: 120px;
+    background: #1f1f1f;
+    right: -70px;
+    border-radius: 10px;
+    color: white;
+}
+
+.toggle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 80%;
+    /*background: var(--body-color);*/
+    background: #0f0A06;
+}
+
+.toggle::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 45px;
+    height: 45px;
+    background: #333;
+    border: 2px solid var(--container-color);
+    border-radius: 10px;
+    cursor: [pointer];
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    transition: .5s ease;
+}
+
+.input-check:checked~.toggle::after {
+    top: 65px;
+
+}
+
+.input-check {
+    position: absolute;
+    right: -70px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.toggle .text {
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--white-color);
+    font-size: var(--small-font-size);
+    z-index: 1;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: .5s ease;
+    user-select: none;
+}
+
+.toggle .text.off {
+    opacity: 1;
+}
+
+.input-check:checked~.toggle .text.off {
+    top: 76px;
+    opacity: 0;
+}
+
+.toggle .text.on {
+    opacity: 0;
+}
+
+.input-check:checked~.toggle .text.on {
+    top: 76px;
+    opacity: 1;
+    color: #ffa31a;
+    text-shadow: 0 0 15px #ffa31a,
+        0 0 30px #ffa31a,
+        0 0 45px #ffa31a,
+        0 0 60px #ffa31a;
+}
+
+.card{
+    width: 900px !important;
+}
+
+.logoutButton {
+    --figure-duration: 100ms;
+    --transform-figure: none;
+    --walking-duration: 100ms;
+    --transform-arm1: none;
+    --transform-wrist1: none;
+    --transform-arm2: none;
+    --transform-wrist2: none;
+    --transform-leg1: none;
+    --transform-calf1: none;
+    --transform-leg2: none;
+    --transform-calf2: none;
+    background: none;
+    border: 0;
+    color: #f4f7ff;
+    cursor: pointer;
+    display: block;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    outline: none;
+    padding: 0 0 0 20px;
+    perspective: 100px;
+    position: relative;
+    text-align: left;
+    width: 130px;
+    -webkit-tap-highlight-color: transparent;
+    float: right;
+    margin-right: 18px;
+}
+
+.logoutButton::before {
+    background-color: #1f2335;
+    border-radius: 5px;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: none;
+    transition: transform 50ms ease;
+    width: 100%;
+    z-index: 2;
+}
+
+.logoutButton:hover .door {
+    transform: rotateY(20deg);
+}
+
+.logoutButton:hover .door {
+    transform: rotateY(20deg);
+}
+
+.logoutButton:active::before {
+    transform: scale(0.96);
+}
+
+.logoutButton:active .door {
+    transform: rotateY(28deg);
+}
+
+.logoutButton.clicked::before {
+    transform: none;
+}
+
+.logoutButton.clicked .door {
+    transform: rotateY(35deg);
+}
+
+.logoutButton.door-slammed .door {
+    transform: none;
+    transition: transform 100ms ease-in 250ms;
+}
+
+.logoutButton.falling {
+    animation: shake 200ms linear;
+}
+
+.logoutButton.falling .bang {
+    animation: flash 300ms linear;
+}
+
+.logoutButton.falling .figure {
+    animation: spin 1000ms infinite linear;
+    bottom: -1080px;
+    opacity: 0;
+    right: 1px;
+    transition: transform calc(var(--figure-duration) * 1ms) linear, bottom calc(var(--figure-duration) * 1ms) cubic-bezier(0.7, 0.1, 1, 1) 100ms, opacity calc(var(--figure-duration) * 0.25ms) linear calc(var(--figure-duration) * 0.75ms);
+    z-index: 1;
+}
+
+.logoutButton--light::before {
+    background-color: #f4f7ff;
+}
+
+.logoutButton--light .button-text {
+    color: #1f2335;
+}
+
+.logoutButton--light .door,
+.logoutButton--light .doorway {
+    fill: #1f2335;
+}
+
+.button-text {
+    color: #f4f7ff;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+
+svg {
+    display: block;
+    position: absolute;
+}
+
+.figure {
+    bottom: 5px;
+    fill: #f75b43;
+    right: 18px;
+    transform: var(--transform-figure);
+    transition: transform calc(var(--figure-duration) * 1ms) cubic-bezier(0.2, 0.1, 0.8, 0.9);
+    width: 30px;
+    z-index: 4;
+}
+
+.door,
+.doorway {
+    bottom: 4px;
+    fill: #f4f7ff;
+    right: 12px;
+    width: 32px;
+}
+
+.door {
+    transform: rotateY(20deg);
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+    transition: transform 200ms ease;
+    z-index: 5;
+}
+
+.door path {
+    fill: #f75b43;
+    stroke: #f75b43;
+    stroke-width: 4;
+}
+
+.doorway {
+    z-index: 3;
+}
+
+.bang {
+    opacity: 0;
+}
+
+.arm1,
+.wrist1,
+.arm2,
+.wrist2,
+.leg1,
+.calf1,
+.leg2,
+.calf2 {
+    transition: transform calc(var(--walking-duration) * 1ms) ease-in-out;
+}
+
+.arm1 {
+    transform: var(--transform-arm1);
+    transform-origin: 52% 45%;
+}
+
+.wrist1 {
+    transform: var(--transform-wrist1);
+    transform-origin: 59% 55%;
+}
+
+.arm2 {
+    transform: var(--transform-arm2);
+    transform-origin: 47% 43%;
+}
+
+.wrist2 {
+    transform: var(--transform-wrist2);
+    transform-origin: 35% 47%;
+}
+
+.leg1 {
+    transform: var(--transform-leg1);
+    transform-origin: 47% 64.5%;
+}
+
+.calf1 {
+    transform: var(--transform-calf1);
+    transform-origin: 55.5% 71.5%;
+}
+
+.leg2 {
+    transform: var(--transform-leg2);
+    transform-origin: 43% 63%;
+}
+
+.calf2 {
+    transform: var(--transform-calf2);
+    transform-origin: 41.5% 73%;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg) scale(0.94);
+    }
+
+    to {
+        transform: rotate(359deg) scale(0.94);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(-1deg);
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
